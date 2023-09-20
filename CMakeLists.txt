@@ -3,4 +3,5 @@ project(DataStructures)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(DataStructures main.cpp AddOnlyGraph.cpp)
+add_executable(DataStructures main.cpp AddOnlyGraph.cpp
+        Graph.cpp)
