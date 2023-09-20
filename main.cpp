@@ -19,7 +19,6 @@ void aggiorna_adiacenti(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::No
         graph.scriviNodo(adj, value);
         value = 0;
     }
-
 }
 
 
@@ -43,9 +42,11 @@ int main() {
     graph.addEdge("B", "E", 2);
     graph.addEdge("C", "F", 3);
 
+    // Print the graph
+    cout << "Graph:" << endl;
+    graph.print();
 
-
-    // Print the edge A -> B value
+    // Print the edges and values
     cout << "B -> C: " << graph.readEdge("B", "C") << endl;
     cout << "B -> D: " << graph.readEdge("B", "D") << endl;
     cout << "B -> E: " << graph.readEdge("B", "E") << endl;
@@ -55,11 +56,17 @@ int main() {
     cout << endl;
 
 
+
+
     // Print B e C value before the update
     cout << "B value before update: " << graph.readNode("B") << endl;
     cout << "C value before update: " << graph.readNode("C") << endl;
 
-    // Print the adjacencies of a node
+    // Print new line
+    cout << endl;
+
+    // Update the graph
+    cout << "Updating the graph..." << endl;
     aggiorna_adiacenti(graph, "A");
 
     // Print new line

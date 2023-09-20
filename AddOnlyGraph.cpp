@@ -82,6 +82,8 @@ public:
             }
             cout << endl;
         }
+        // Print new line
+        cout << endl;
     }
 
 
