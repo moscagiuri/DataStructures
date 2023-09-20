@@ -76,11 +76,13 @@ public:
     // Print the graph
     void print() {
         for (auto node : nodesList) {
-            cout << node << " -> ";
+            if (!adjacencies[node].empty()) {
+                cout << node << " -> ";
             for (auto adj : adjacencies[node]) {
                 cout << adj << " ";
             }
             cout << endl;
+            }
         }
         // Print new line
         cout << endl;
@@ -91,7 +93,7 @@ public:
 private:
     typedef pair<Node, Node> edge;
     list<Node> nodesList;
-    map<Node, T> nodes; // int is the value of the node
-    map<edge, T> edges; // int is the value of the edge
+    map<Node, T> nodes; // T is the value of the node
+    map<edge, T> edges; // T is the value of the edge
     map<Node, list<Node>> adjacencies;
 };
