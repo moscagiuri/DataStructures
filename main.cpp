@@ -8,7 +8,6 @@
 using namespace std;
 
 
-
 // Italian alias for updateAdjacencies
 void aggiorna_adiacenti(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::Node node) {
     int value = 0;
@@ -21,6 +20,38 @@ void aggiorna_adiacenti(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::No
     }
 }
 
+// Build a graph
+template<class T>
+AddOnlyGraph<T> buildGraph() {
+    AddOnlyGraph<T> graph;
+
+    // Add some nodes
+    graph.addNode("A");
+    graph.addNode("B");
+    graph.addNode("C");
+    graph.addNode("D");
+    graph.addNode("E");
+    graph.addNode("F");
+    graph.addNode("G");
+
+    // Add some edges
+    graph.addEdge("A", "B", 1);
+    graph.addEdge("A", "C", 2);
+
+    graph.addEdge("B", "G", 3);
+
+    graph.addEdge("C", "B", 4);
+    graph.addEdge("C", "D", 1);
+    graph.addEdge("C", "E", 2);
+
+    graph.addEdge("D", "F", 1);
+    graph.addEdge("D", "B", 2);
+
+    graph.print();
+
+    return graph;
+
+}
 
 int main() {
     AddOnlyGraph<int> graph;
