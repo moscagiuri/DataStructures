@@ -8,20 +8,13 @@
 using namespace std;
 
 
-void updateAdjacencies(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::Node node) {
-    int value = 0;
-    for (auto adj : graph.getAdjacencies(node)) {
-        value += graph.readEdge(node, adj);
-    }
-    graph.writeNode(node, value);
-}
 
 // Italian alias for updateAdjacencies
 void aggiorna_adiacenti(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::Node node) {
     int value = 0;
     for (auto adj : graph.adiacenti(node)) {
-        for (auto a : graph.getAdjacencies(adj)) {
-            value += graph.readEdge(adj, a);
+        for (auto a : graph.adiacenti(adj)) {
+            value += graph.leggiArco(adj, a);
         }
         graph.scriviNodo(adj, value);
         value = 0;
