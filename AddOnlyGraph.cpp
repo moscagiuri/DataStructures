@@ -44,7 +44,6 @@ public:
     }
 
 
-
     // Get adjacencies of a node
     list<Node> getAdjacencies(const Node& node) const {
         return adjacencies.at(node);
