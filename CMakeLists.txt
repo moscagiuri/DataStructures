@@ -5,6 +5,5 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(DataStructures main.cpp AddOnlyGraph.cpp
         Graph.cpp
-        exercises.h
         MyList.h
 )

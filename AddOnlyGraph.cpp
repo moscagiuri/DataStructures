@@ -13,7 +13,7 @@ using namespace std;
 template<class T>
 class AddOnlyGraph : public Graph <T> {
 public:
-    typedef string Node;
+    typedef int Node;
 
     AddOnlyGraph() = default;
 
@@ -85,7 +85,6 @@ public:
         // Print new line
         cout << endl;
     }
-
 
 
 private:

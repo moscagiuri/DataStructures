@@ -18,6 +18,7 @@ private:
 
 public:
     typedef Cella* position;
+
     MyList();
     bool vuota() const;
     T leggi(position) const;
@@ -94,8 +95,6 @@ void MyList<T>::inserisci(const T &a, position p) {
     p->prev->next = nuovo;
     p->prev = nuovo;
 }
-
-
 
 
 #endif //DATASTRUCTURES_MYLIST_H
