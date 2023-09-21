@@ -4,7 +4,6 @@
 
 #include <list>
 #include <map>
-#include <string>
 #include <iostream>
 
 #include "Graph.cpp"
@@ -75,10 +74,10 @@ public:
 
     // Print the graph
     void print() {
-        for (auto node : nodesList) {
+        for (const auto& node : nodesList) {
             if (!adjacencies[node].empty()) {
                 cout << node << " -> ";
-            for (auto adj : adjacencies[node]) {
+            for (const auto& adj : adjacencies[node]) {
                 cout << adj << " ";
             }
             cout << endl;

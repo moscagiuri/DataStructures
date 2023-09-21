@@ -1,6 +1,4 @@
 #include <iostream>
-#include <list>
-#include <map>
 
 #include "AddOnlyGraph.cpp"
 
@@ -9,7 +7,7 @@ using namespace std;
 
 
 // Italian alias for updateAdjacencies
-void aggiorna_adiacenti(AddOnlyGraph<int>& graph, typename AddOnlyGraph<int>::Node node) {
+void aggiorna_adiacenti(AddOnlyGraph<int>& graph, const typename AddOnlyGraph<int>::Node& node) {
     int value = 0;
     for (auto adj : graph.adiacenti(node)) {
         for (auto a : graph.adiacenti(adj)) {
@@ -107,7 +105,6 @@ int main() {
     // Print the B value after the update
     cout << "B value after update: " << graph.readNode("B") << endl;
     cout << "C value after update: " << graph.readNode("C") << endl;
-
 
     return 0;
 }
